@@ -334,9 +334,9 @@ function shootProjectile() {
     return;
   }
 
-  if (this.shotSound) {
-    this.shotSound.play();
-  }
+  // if (this.shotSound) {
+      this.shotSound.play();
+// }
 
   bullet.setOrigin(0.5, 0.5);
   bullet.body.allowGravity = false;
