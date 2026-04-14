@@ -183,21 +183,21 @@ class GameScene extends Phaser.Scene {
     updateAmmoText();
     updateTimerText(0);
 
-    music = this.sound.add('music', {
-      loop: true,
-      volume: 0.5
-    });
+    // music = this.sound.add('music', {
+      // loop: true,
+     // volume: 0.5
+  //  });
 
-    if (!music.isPlaying) {
-      music.play();
-    }
+   // if (!music.isPlaying) {
+     // music.play();
+   // }
 
-    this.shotSound = this.sound.add('shot', {
-      volume: 0.4
-    });
+   // this.shotSound = this.sound.add('shot', {
+    //  volume: 0.4
+   // });
 
-    gameStartTime = this.time.now;
-  }
+   // gameStartTime = this.time.now;
+ // }
 
   update() {
     if (isGameOver) {
