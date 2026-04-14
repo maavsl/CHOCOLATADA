@@ -75,7 +75,7 @@ class GameScene extends Phaser.Scene {
     this.load.image('bg', 'assets/background.png');
 
     // this.load.audio('music', 'assets/music.mp3');
-    // this.load.audio('shot', 'assets/shot.wav');
+     this.load.audio('shot', 'assets/shot.wav');
   }
 
 create() {
@@ -320,9 +320,9 @@ function shootProjectile() {
     return;
   }
 
-  // if (this.shotSound) {
-      // sonido desactivado temporalmente para probar compatibilidad
-// }
+   if (this.shotSound) {
+      
+ }
 
   bullet.setOrigin(0.5, 0.5);
   bullet.body.allowGravity = false;
