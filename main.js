@@ -75,6 +75,7 @@ class GameScene extends Phaser.Scene {
     this.load.image('bg', 'assets/background.png');
 
     this.load.audio('shot', 'assets/shot.wav');
+    this.load.audio('music', 'assets/music.mp3');
   }
 
   create() {
@@ -83,6 +84,7 @@ class GameScene extends Phaser.Scene {
     currentWeapon = 'note';
     stopSpawning = false;
     bossSpawned = false;
+    musicStarted = false;
 
     ammo = {
       heart: 10,
@@ -185,6 +187,11 @@ class GameScene extends Phaser.Scene {
       volume: 0.4
     });
 
+    music = this.sound.add('music', {
+      loop: true,
+      volume: 0.5
+    });
+
     gameStartTime = this.time.now;
   }
 
@@ -194,6 +201,12 @@ class GameScene extends Phaser.Scene {
         location.reload();
       }
       return;
+    }
+
+    // Música: arranca una sola vez, ya dentro del juego
+    if (!musicStarted && music) {
+      music.play();
+      musicStarted = true;
     }
 
     const elapsed = (this.time.now - gameStartTime) / 1000;
@@ -276,6 +289,7 @@ let enemies;
 let canShoot = true;
 let currentWeapon = 'note';
 let isGameOver = false;
+let musicStarted = false;
 
 let ammo = {
   heart: 10,
@@ -287,6 +301,7 @@ let ammoText;
 let timerText;
 let gameOverText;
 let bossText;
+let music;
 
 let gameStartTime;
 let stopSpawning = false;
@@ -459,6 +474,10 @@ function playerDies(playerSprite, enemy) {
   playerBullets.getChildren().forEach(b => {
     b.setVelocityX(0);
   });
+
+  if (music && music.isPlaying) {
+    music.stop();
+  }
 
   if (bossText) {
     bossText.setVisible(false);
