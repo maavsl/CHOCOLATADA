@@ -327,7 +327,7 @@ function spawnPolitico() {
   enemy.setScale(0.16);
   enemy.setOrigin(0.5, 1);
   enemy.body.allowGravity = false;
-  enemy.setVelocityX(-120);
+  enemy.setVelocityX(-110);
 
   enemy.enemyType = 'politico';
 
@@ -342,7 +342,7 @@ function spawnGroupies() {
   enemy.setScale(0.16);
   enemy.setOrigin(0.5, 1);
   enemy.body.allowGravity = false;
-  enemy.setVelocityX(-90);
+  enemy.setVelocityX(-80);
 
   enemy.enemyType = 'grupis';
 
@@ -357,7 +357,7 @@ function spawnCritico() {
   enemy.setScale(0.16);
   enemy.setOrigin(0.5, 1);
   enemy.body.allowGravity = false;
-  enemy.setVelocityX(-110);
+  enemy.setVelocityX(-100);
 
   enemy.enemyType = 'critico';
 
