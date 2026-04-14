@@ -321,7 +321,7 @@ function shootProjectile() {
   }
 
   // if (this.shotSound) {
-      this.shotSound.play();
+      // sonido desactivado temporalmente para probar compatibilidad
 // }
 
   bullet.setOrigin(0.5, 0.5);
